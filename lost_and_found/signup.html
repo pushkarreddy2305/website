@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>LOST & FOUND</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/signup.js"></script>
+    <style>
+      #edit-signup{
+        padding-left:80px;
+      }
+    </style>
+
+   
+</head>
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="index.html">LOST & FOUND</a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">
+
+
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="" data-toggle="modal" data-target="#loginModal" data-keyboard="true"><span
+                        class="glyphicon glyphicon-user"></span>Login</a></li>
+                <div class="modal fade" id="loginModal" role="dialog">
+                    <div class="modal-dialog">
+
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4><span class="glyphicon glyphicon-lock"></span> Login</h4>
+                            </div>
+                            <div class="modal-body">
+                               
+
+                                            <div class="form-group">
+
+                                                <input type="text" class="form-control" id="username" name="username"
+                                                       placeholder="Enter  email">
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="password" class="form-control" id="psw" name="password"
+                                                       placeholder="Enter password">
+                                            </div>
+
+                                            <div class="form-group">
+                                                <input type="submit" class="form-control" id="student-submit"
+                                                       name="submit-button" value="Log In">
+                                            </div>
+                                        </form>
+
+
+                            </div>
+            </ul>
+        </div>
+    </div>
+</nav>
+<br>
+<br>
+<br>
+<h1 class="text-center" id="edit-signup">Signup</h1>
+<hr>
+<div class="active row" id="signup">
+        <!-- left column -->
+        <div class="col-md-1">
+        </div>
+
+        <!-- edit form column -->
+        <div class="col-md-10 personal-info">
+            
+
+            <form class="form-horizontal" role="form" id="signup-form" method="POST">
+                <div class="form-group">
+                    <label class="col-lg-3 control-label">First name:</label>
+                    <div class="col-lg-8">
+                        <input class="form-control" type="text" name="first_name">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-3 control-label">Last name:</label>
+                    <div class="col-lg-8">
+                        <input class="form-control" type="text" name="last_name">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-3 control-label">Email:</label>
+                    <div class="col-lg-8">
+                        <input class="form-control" type="text" name="email">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-lg-3 control-label">City:</label>
+                    <div class="col-lg-8">
+                        <input class="form-control" type="text" name="city">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-md-3 control-label">Username:</label>
+                    <div class="col-md-8">
+                        <input class="form-control" type="text" name="username">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 control-label">Password:</label>
+                    <div class="col-md-8">
+                        <input class="form-control" type="password" name="password">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 control-label">Confirm password:</label>
+                    <div class="col-md-8">
+                        <input class="form-control" type="password" name="password1">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 control-label"></label>
+                    <div class="col-md-8">
+                        <input type="submit" class="form-control" id="signup-submit" name="submit-button"
+                               value="Start Now">
+                        <span></span>
+
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class='col-md-1'>
+        </div>
+    </div>
+
+
+</div>
+
+</body>
+</html>
