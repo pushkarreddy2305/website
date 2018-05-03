@@ -1,35 +1,42 @@
  baseUrl = "http://127.0.0.1:8000/api/";
         var test = localStorage.getItem("user");
         user = jQuery.parseJSON(test);
-    $('form').submit(function(e) {
+function uploadimage(){
+        $('form#image-form').submit(function(e) {
         console.log('working');
-        
+           console.log($(this).attr('method'))
         var formData = new FormData($(this));
        formData.append('image',$('#image')[0].files[0]);
+
         list = $(this).serializeArray();
         
         var values = {};
         $.each(list, function(i, field) {
           values[field.name] = field.value;
-         //    console.log(field.name,field.value);
-         // formData.append(field.name,field.value);
+             console.log(field.name,field.value);
+          //formData.append(field.name,field.value);
         });
-        //values['item_image'] = image;
         console.log(values);
         $.ajax({
             url: "http://127.0.0.1:8000/api/check/"+user.username+'/'+values['item_name']+'/'+values['item_category']+'/upload/',
-            type: $(this).attr('method'),
+            type: "POST",
             data: formData,
-               contentType: false,
-            processData:false,
-            success: function(data) { 
+            contentType: false,
+             processData:false,
+            success: function(data) {
                 console.log(data);
-                //window.location.href='success.html';
-            }
+                alert('Item uploaded successfully');
+                window.location.href='upload.html';
+
+            },
+             error: function(xhr, errmsg, err) {
+                    alert(errmsg);
+                }
         });
         e.preventDefault();
     });
-     function startRenderTable() {
+}
+function startRenderTable() {
      var position = 1;
      var limit = 10;
      var offset = 0;
@@ -69,6 +76,11 @@
     var test = localStorage.getItem("user");
         user = jQuery.parseJSON(test);
         console.log(user.username)
+           var values = {};
+        values['item_name'] = 'check';
+        values['item_category'] = 'check';
+        console.log("http://127.0.0.1:8000/api/check/"+user.username+'/'+values['item_name']+'/'+values['item_category']+'/upload/');
+
             $.ajax({
                 url: baseUrl+  user.username + "/uploads/",
                 'contentType': 'application/json',
@@ -139,6 +151,8 @@
         $(document).ready(function() {
            renderTable(0, 5);
            startRenderTable();
+           uploadimage();
+
              var test = localStorage.getItem("user");
         user = jQuery.parseJSON(test);
        

@@ -24,11 +24,10 @@
       $('div#standard').hide();
      }
      
-      studentProfileForm(user.username);
-      teacherProfileForm(user.username);
+      ProfileForm(user.username);
  });
 
- function studentProfileForm(username) {
+ function ProfileForm(username) {
     var username = username;
     $("form#profile-form").submit(function(event) {
         list = $(this).serializeArray();
@@ -69,44 +68,6 @@
 
 }
 
-function teacherProfileForm(username) {
-    var username =username;
-    $("form#profile-form").submit(function(event) {
-        list = $(this).serializeArray();
-        var values = {};
-        $.each(list, function(i, field) {
-            values[field.name] = field.value;
-        });
-        event.preventDefault();
-        checkPasswordsMatch(values);
-
-        $.ajax({
-            url: baseUrl+"quizzo/teacher/"+username+"signup/", // the endpoint
-            type: "POST", // http method
-            'contentType': 'application/json',
-            data: JSON.stringify(values), // data sent with the post request
-            crossDomain: true,
-            // handle a successful response
-            success: function(data) {
-                var user = {};
-                user.id = data.id;
-                user.username = data.username;
-                user.user_type = "student";
-                localStorage.setItem("user", JSON.stringify(user));
-
-                window.location.href = "competition.html";
-            },
-
-            // handle a non-successful response
-            error: function(xhr, errmsg, err) {
-               
-                alert(xhr.responseText);
-            }
-        });
-
-    });
-
-}
 
 function checkPasswordsMatch(values){
      if(values['password']!=values['password1']){

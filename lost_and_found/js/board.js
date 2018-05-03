@@ -127,7 +127,7 @@
 
  var test = localStorage.setItem("student-username", user.username);
  $('a#name').html('<span class="glyphicon glyphicon-user"></span>  ' + user.username);
-
+   console.log(user.username,'printing username');
  $('a#logout').click(function() {
      window.location.href = "index.html";
      localStorage.clear();

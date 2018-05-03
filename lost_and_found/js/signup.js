@@ -63,7 +63,7 @@ function loginForm() {
         checkPasswordsMatch(values);
 
         $.ajax({
-            url: baseUrl+"quizzo/student/login/", // the endpoint
+            url: baseUrl+"login/", // the endpoint
             type: "POST", // http method
             'contentType': 'application/json',
             data: JSON.stringify(values), // data sent with the post request
